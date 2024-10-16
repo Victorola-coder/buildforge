@@ -2,19 +2,25 @@ import "./global.css";
 import clsx from "clsx";
 import type { Metadata } from "next";
 import { Footer, Navbar } from "./components/global";
-// import localFont from "next/font/local";
+import localFont from "next/font/local";
 
-// const clashmed = localFont({
-//   src: "./fonts/clash/ClashGrotesk-Medium.otf",
-//   variable: "--font-clash-Grotesk",
-//   weight: "500",
-// });
+const clashmed = localFont({
+  src: "./fonts/clash/ClashGrotesk-Medium.otf",
+  variable: "--font-clashGroteskMedium",
+  weight: "500",
+});
 
-// const clashreg = localFont({
-//   src: "./fonts/clash/ClashGrotesk-Regular.otf",
-//   variable: "--font-clash-Grotesk",
-//   weight: "400",
-// });
+const clashreg = localFont({
+  src: "./fonts/clash/ClashGrotesk-Regular.otf",
+  variable: "--font-clash-Grotesk",
+  weight: "400",
+});
+
+const satoshi = localFont({
+  src: "./fonts/satoshi/Satoshi-Medium.otf",
+  variable: "--font-SatoshiMedium",
+  weight: "500",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://buildforge.xyz"),
@@ -85,8 +91,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={clsx("antialiased")}
-        //  clashmed.className, clashreg.className
+        className={clsx(
+          "lowercase",
+          clashmed.variable,
+          clashreg.variable,
+          satoshi.variable
+        )}
       >
         <Navbar />
         {children}

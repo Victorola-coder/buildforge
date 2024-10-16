@@ -8,7 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      fontFamily: {},
+      fontFamily: {
+        clashMed: ["var(--font-clashGroteskMedium)"],
+        satMed: ["var(--font-SatoshiMedium)"],
+      },
       keyframes: {
         "fade-effect": {
           "0%": {
