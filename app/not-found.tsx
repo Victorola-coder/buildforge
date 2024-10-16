@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-// import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 export default function NotFound() {
   return (
@@ -38,13 +38,13 @@ export default function NotFound() {
             href="/"
             className="relative z-40 cursor-pointer w-[142px] mt-4 md:mt-[27px] mx-auto block bg-gradient-to-l from-[#D9D9D9] to-[#D9D9D900] pt-0.5 pr-0.5"
           >
-            {/* <motion.button
+            <motion.button
               whileTap={{ scale: 1.1 }}
               whileHover={{ scale: 0.99 }}
               className="bg-main px-[22.8px] py-[14.85px] whitespace-nowrap text-[14.5px] font-medium"
             >
               Back to home
-            </motion.button> */}
+            </motion.button>
           </Link>
         </div>
       </section>

@@ -1,18 +1,20 @@
-import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./global.css";
+import clsx from "clsx";
+import type { Metadata } from "next";
+import { Footer, Navbar } from "./components/global";
+// import localFont from "next/font/local";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
+// const clashmed = localFont({
+//   src: "./fonts/clash/ClashGrotesk-Medium.otf",
+//   variable: "--font-clash-Grotesk",
+//   weight: "500",
+// });
 
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+// const clashreg = localFont({
+//   src: "./fonts/clash/ClashGrotesk-Regular.otf",
+//   variable: "--font-clash-Grotesk",
+//   weight: "400",
+// });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://buildforge.xyz"),
@@ -83,9 +85,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={clsx("antialiased")}
+        //  clashmed.className, clashreg.className
       >
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
