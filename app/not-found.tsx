@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 export default function NotFound() {
   return (
     <>
-      <section className="overflow-hidden mx-auto relative min-h-[100vh]">
+      <section className="overflow-hidden mx-auto relative min-h-[100vh]  font-clashMed">
         <div className="absolute z-10 right-0 left-0 top-[140px] md:top-5">
           <h2 className="text-[262.916px] lg:text-[547.559px] mx-auto font-semibold rotate-[-0.133deg] bg-gradient-to-r bg-clip-text text-transparent from-[#D9D9D975]/5 to-[#D9D9D900] text-center">
             404
@@ -29,9 +29,11 @@ export default function NotFound() {
         </div>
 
         <div className="mt-[340px] md:mt-[250px] lg:mt-[400px] text-center mx-auto">
-          <h3 className="text-[23px] font-semibold">oooops! chief..😢</h3>
-          <p className="text-[#FFFFFF99] text-center mx-auto max-w-sm px-3 text-sm font-clash font-medium">
-            {" We can't show the page you requested due to legal reasons."}
+          <h3 className="text-[23px] font-satMed font-semibold">
+            oooops! chief..😢
+          </h3>
+          <p className="text-[#FFFFFF99] text-center mx-auto max-w-sm px-3 text-sm font-clashMed font-medium">
+            {"We can't show the page you requested due to legal reasons."}
           </p>
 
           <Link
@@ -41,7 +43,7 @@ export default function NotFound() {
             <motion.button
               whileTap={{ scale: 1.1 }}
               whileHover={{ scale: 0.99 }}
-              className="bg-main px-[22.8px] py-[14.85px] whitespace-nowrap text-[14.5px] font-medium"
+              className="bg-primary px-[22.8px] py-[14.85px] whitespace-nowrap text-[14.5px] font-medium"
             >
               Back to home
             </motion.button>

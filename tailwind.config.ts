@@ -9,8 +9,9 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        clashMed: ["var(--font-clashGroteskMedium)"],
+        clash: ["var(--font-clash-Grotesk)"],
         satMed: ["var(--font-SatoshiMedium)"],
+        clashMed: ["var(--font-clashGroteskMedium)"],
       },
       keyframes: {
         "fade-effect": {
