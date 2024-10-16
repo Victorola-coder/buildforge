@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "./globals.css";
+import "./global.css";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -17,7 +17,8 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL("https://buildforge.xyz"),
   icons: {
-    icon: "/favicon.svg",
+    // icon: "/favicon.svg",
+    icon: "/icon.png",
   },
   title: "buildforge - Meet, connect, Vibe with people of like minds",
   description: "we’re bullish on first time & early stage builders",
@@ -49,8 +50,7 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://buildgforge..app",
     title: "buildforge - Meet, connect, Vibe with people of like minds",
-    description:
-      "we’re bullish on first time & early stage builders",
+    description: "we’re bullish on first time & early stage builders",
     siteName: "buildforge",
     locale: "en_US",
     emails: ["hello@builforge.xyz"],
@@ -59,8 +59,7 @@ export const metadata: Metadata = {
     site: "@pxxl_space",
     creator: "@pxxl_space",
     title: "buildforge - Deploy your projects faster",
-    description:
-      "we’re bullish on first time & early stage builders",
+    description: "we’re bullish on first time & early stage builders",
   },
   appleWebApp: {
     capable: true,

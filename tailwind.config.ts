@@ -59,7 +59,7 @@ const config: Config = {
       },
       colors: {
         primary: {
-          DEFAULT: "#FF63F9",
+          DEFAULT: "#8066FF",
           100: "#FFF4EE",
         },
         dark: {
@@ -69,8 +69,8 @@ const config: Config = {
           300: "#676B71",
         },
         main: {
-          DEFAULT: "#595D62",
-          100: "#F5F5F5",
+          DEFAULT: "#E1DEF0",
+          100: "#F3EFFD",
         },
       },
       backgroundImage: {},
