@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         clash: ["var(--font-clash-Grotesk)"],
+        satBold: ["var(--font-SatoshiBold)"],
         satMed: ["var(--font-SatoshiMedium)"],
         clashMed: ["var(--font-clashGroteskMedium)"],
       },

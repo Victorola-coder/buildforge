@@ -22,6 +22,12 @@ const satoshi = localFont({
   weight: "500",
 });
 
+const satoshiBold = localFont({
+  src: "./fonts/satoshi/Satoshi-Bold.otf",
+  variable: "--font-SatoshiBold",
+  weight: "700",
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://buildforge.xyz"),
   icons: {
@@ -95,7 +101,8 @@ export default function RootLayout({
           "lowercase",
           clashmed.variable,
           clashreg.variable,
-          satoshi.variable
+          satoshi.variable,
+          satoshiBold.variable,
         )}
       >
         <Navbar />
