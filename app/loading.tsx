@@ -1,5 +1,3 @@
-// import Spinner from "./components/global/Spinner/Spinner";
-
 import { Spinner } from "./components/global";
 
 export default function Loading() {
