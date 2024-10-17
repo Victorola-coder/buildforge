@@ -11,6 +11,7 @@ const config: Config = {
       fontFamily: {
         clash: ["var(--font-clash-Grotesk)"],
         satBold: ["var(--font-SatoshiBold)"],
+        satBoldI: ["var(--font-SatoshiBoldItalic)"],
         satMed: ["var(--font-SatoshiMedium)"],
         clashMed: ["var(--font-clashGroteskMedium)"],
       },
@@ -65,7 +66,8 @@ const config: Config = {
       colors: {
         primary: {
           DEFAULT: "#8066FF",
-          100: "#FFF4EE",
+          100: "#6248E1",
+          200: "#8066FF",
         },
         dark: {
           DEFAULT: "#141517",
