@@ -14,7 +14,6 @@ body {
   background-color: #0f0f0f;
 }
 
-
 body::-webkit-scrollbar {
   @apply w-1 bg-transparent;
 }
@@ -25,7 +24,7 @@ body::-webkit-scrollbar-corner {
 
 /* scrollbar */
 body::-webkit-scrollbar-track {
-  @apply bg-main;
+  @apply bg-primary;
 }
 
 body::-webkit-scrollbar-track-piece {
@@ -69,5 +68,4 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
-
 

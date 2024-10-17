@@ -81,6 +81,9 @@ const config: Config = {
         },
       },
       backgroundImage: {},
+      shadow: {
+        primary: "0px 0px 0px 6px rgba(128, 102, 255, 0.25)",
+      },
     },
   },
   plugins: [],
