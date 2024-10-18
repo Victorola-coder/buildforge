@@ -55,6 +55,7 @@ const config: Config = {
             opacity: "1",
           },
         },
+        spin: {},
       },
       animation: {
         "fade-in": "fade-effect 300ms linear",
@@ -62,6 +63,7 @@ const config: Config = {
         "slide-up": "slide-up 300ms linear forwards",
         "rotate-clockwise": "rotate-clockwise 1s infinite linear",
         "loader-opacity": "loader 1s ease-in-out alternate infinite",
+        "spin-slow": "spin 20s linear infinite",
       },
       colors: {
         primary: {

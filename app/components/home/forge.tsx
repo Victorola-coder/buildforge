@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -11,7 +12,7 @@ export default function Main() {
     console.log("submitted");
   };
 
-  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
   };
 
@@ -36,18 +37,7 @@ export default function Main() {
           builders. enter your email below and we’ll welcome you with a starter
           pack. see ya!
         </p>
-        <form
-          onSubmit={handleSubmit}
-          className="flex flex-row items-center md:gap-[15px]"
-        >
-          <input
-            type="email"
-            placeholder="your email"
-            className="w-[300px] outline-none hidden h-[50px] bg-dark rounded-[10px] px-[20px] py-[12.5px] text-white font-clash font-normal md:leading-[26px] md:tracking-[-0.18px]"
-            value={email}
-            onChange={handleEmailChange}
-          />
-
+        <div className="flex flex-row items-center md:gap-[15px]">
           <Link
             href="https://chat.whatsapp.com/LrGkqCkEUkoDFg8UVKuZD4"
             target="_blank"
@@ -57,12 +47,12 @@ export default function Main() {
             </button>
           </Link>
 
-          <Link href="https://x.com/buildforge" target="_blank">
+          <Link href="https://x.com/thebuildforge" target="_blank">
             <button className="border-solid border-[#232328] border-[1.5px] hover:border-primary-100 active:bg-[#8066FF26] active:shadow-primary transition-all duration-300 active:scale-95 rounded-[10px] px-[21px] py-[12.5px] text-[#EEEEEE] hover:text-primary-100 font-medium md:text-[17px] leading-normal font-clashMed md:tracking-[-0.17px] w-[140px]">
               follow on x
             </button>
           </Link>
-        </form>
+        </div>
       </div>
 
       <div className="hidden w-[541px] h-[541px] bg-primary rounded-full">
@@ -84,46 +74,30 @@ export default function Main() {
       </div>
 
       <div>
-        <svg viewBox="0 0 400 400">
-          <defs>
-            <path
-              id="MyPath"
-              d="M 200, 200
-             m -100, 0
-             a 100,100 0 1,1 200,0
-             a 100,100 0 1,1 -200,0
-"
-            />
-          </defs>
+        <figure>
+          <Image
+            height={300}
+            width={500}
+            alt="welcome!"
+            layout="responsive"
+            className="animate-spin-slow transition-all duration-300"
+            draggable={false}
+            src="https://cdn.dropp.cloud/uedqjh.svg"
+          />
+        </figure>
 
-          <text
-            font-family="Verdana"
-            font-size="30"
-            fill="rgb(248,203,173)"
-            stroke="rgb(237,125,49)"
-          >
-            <textPath xlinkHref="#MyPath">
-              I want to bend my text around the circle.
-            </textPath>
-          </text>
-          <circle
-            fill="none"
-            stroke="rgb(165,195,251)"
-            cx="200"
-            cy="200"
-            r="80"
-            stroke-width="10"
-            filter="blur(3px)"
-          />
-          <circle
-            fill="rgb(146,208,80)"
-            stroke="rgb(169,209,142)"
-            stroke-width="2px"
-            cx="200"
-            cy="200"
-            r="78"
-          />
-        </svg>
+        {/* form */}
+        <form onSubmit={handleSubmit} className="">
+          <fieldset>
+            <input
+              type="email"
+              placeholder="your email"
+              className="w-[300px] outline-none h-[50px] bg-dark rounded-[10px] px-[20px] py-[12.5px] text-white font-clash font-normal md:leading-[26px] md:tracking-[-0.18px]"
+              value={email}
+              onChange={handleChange}
+            />
+          </fieldset>
+        </form>
       </div>
     </div>
   );
