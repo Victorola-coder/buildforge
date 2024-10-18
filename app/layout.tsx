@@ -1,8 +1,9 @@
 import "./global.css";
 import clsx from "clsx";
+import { AOS } from "./components/global";
 import type { Metadata } from "next";
-import { Footer, Navbar } from "./components/global";
 import localFont from "next/font/local";
+import { Footer, Navbar } from "./components/global";
 
 const clashmed = localFont({
   src: "./fonts/clash/ClashGrotesk-Medium.otf",
@@ -109,9 +110,10 @@ export default function RootLayout({
           clashreg.variable,
           satoshi.variable,
           satoshiBold.variable,
-          satoshiItalic.variable,
+          satoshiItalic.variable
         )}
       >
+        <AOS />
         <Navbar />
         {children}
         <Footer />
