@@ -1,20 +1,41 @@
 "use client";
 
+import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { Button } from "../ui";
 
 export default function Main() {
   const [email, setEmail] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
+
+  const handleBlur = () => {
+    if (email.length > 0) {
+      setEmail("");
+    }
+  };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("submitted");
+    setLoading(true);
+
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
   };
+
+  const validEmail = (email: string) => {
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return emailRegex.test(email);
+  };
+
+  const isDisabled = !validEmail(email);
 
   return (
     <div className="mx-[122px] flex flex-row items-center justify-between">
@@ -87,15 +108,38 @@ export default function Main() {
         </figure>
 
         {/* form */}
-        <form onSubmit={handleSubmit} className="">
+        <form
+          onSubmit={handleSubmit}
+          className="flex flex-col items-center justify-center gap-[21px] rounded-[18px] border-[1px] border-[#232328] bg-[#0D0D11] px-[13px] pt-[20px] pb-[13px]"
+        >
+          <header>
+            <h3 className="md:text-[20px] text-center md:leading-[24px] tracking-[-0.5px] font-satBold font-bold text-main md:tracking-[-0.5px]">
+              join the builforge bytes
+            </h3>
+          </header>
           <fieldset>
             <input
               type="email"
               placeholder="your email"
-              className="w-[300px] outline-none h-[50px] bg-dark rounded-[10px] px-[20px] py-[12.5px] text-white font-clash font-normal md:leading-[26px] md:tracking-[-0.18px]"
+              className={clsx(
+                validEmail(email)
+                  ? "border-primary-100 text-main-100"
+                  : "border-[#232328] focus:border-[#A8A5C0] text-[#A8A5C0]",
+                "w-[360px] outline-none transition-all duration-300 border-[1px] bg-dark rounded-[10px] px-[20px] py-[12.5px] placeholder:text-[#A8A5C0] font-clash text-[15px] font-normal md:leading-[24px] md:tracking-[-0.15px]"
+              )}
               value={email}
               onChange={handleChange}
+              onBlur={handleBlur}
             />
+          </fieldset>
+          <fieldset>
+            <Button
+              disabled={isDisabled}
+              loading={loading}
+              className="w-[360px] text-center mx-auto block"
+            >
+              subscribe
+            </Button>
           </fieldset>
         </form>
       </div>

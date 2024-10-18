@@ -80,6 +80,8 @@ const config: Config = {
         main: {
           DEFAULT: "#E1DEF0",
           100: "#F3EFFD",
+
+          
         },
       },
       backgroundImage: {},
