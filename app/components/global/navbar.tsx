@@ -39,7 +39,7 @@ export default function Navbar() {
             <li className="flex flex-row gap-2">
               {links.map((link) => (
                 <Link href={link.href} key={link.name}>
-                  <h5 className="text-main-100 transition-all duration-300 hover:text-white hover:bg-primary/90 leading-normal font-clash text-[18px] py-[8.5px] px-[18.5px] border border-[#232328] rounded-[100px]">
+                  <h5 className="text-main-100 transition-all duration-300 hover:text-primary-100 active:shadow-primary active:bg-[#8066FF26] hover:border-primary-100 leading-normal font-clash text-[18px] py-[8.5px] px-[18.5px] border-[1.516px] border-solid border-[#312E49] rounded-[100px]">
                     {link.name}
                   </h5>
                 </Link>

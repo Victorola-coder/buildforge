@@ -57,13 +57,73 @@ export default function Main() {
             </button>
           </Link>
 
-          
           <Link href="https://x.com/buildforge" target="_blank">
             <button className="border-solid border-[#232328] border-[1.5px] hover:border-primary-100 active:bg-[#8066FF26] active:shadow-primary transition-all duration-300 active:scale-95 rounded-[10px] px-[21px] py-[12.5px] text-[#EEEEEE] hover:text-primary-100 font-medium md:text-[17px] leading-normal font-clashMed md:tracking-[-0.17px] w-[140px]">
               follow on x
             </button>
           </Link>
         </form>
+      </div>
+
+      <div className="hidden w-[541px] h-[541px] bg-primary rounded-full">
+        <div className="w-[300px] h-[300px] bg-dark rounded-full">
+          <div className="w-[150px] h-[150px] bg-white rounded-full">
+            <div className="w-[75px] h-[75px] bg-dark rounded-full">
+              <div className="w-[37.5px] h-[37.5px] bg-primary rounded-full">
+                <div className="w-[18.75px] h-[18.75px] bg-white rounded-full">
+                  <div className="w-[9.375px] h-[9.375px] bg-dark rounded-full">
+                    <div className="w-[4.6875px] h-[4.6875px] bg-primary rounded-full">
+                      <div className="w-[2.34375px] h-[2.34375px] bg-white rounded-full"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <svg viewBox="0 0 400 400">
+          <defs>
+            <path
+              id="MyPath"
+              d="M 200, 200
+             m -100, 0
+             a 100,100 0 1,1 200,0
+             a 100,100 0 1,1 -200,0
+"
+            />
+          </defs>
+
+          <text
+            font-family="Verdana"
+            font-size="30"
+            fill="rgb(248,203,173)"
+            stroke="rgb(237,125,49)"
+          >
+            <textPath xlinkHref="#MyPath">
+              I want to bend my text around the circle.
+            </textPath>
+          </text>
+          <circle
+            fill="none"
+            stroke="rgb(165,195,251)"
+            cx="200"
+            cy="200"
+            r="80"
+            stroke-width="10"
+            filter="blur(3px)"
+          />
+          <circle
+            fill="rgb(146,208,80)"
+            stroke="rgb(169,209,142)"
+            stroke-width="2px"
+            cx="200"
+            cy="200"
+            r="78"
+          />
+        </svg>
       </div>
     </div>
   );
