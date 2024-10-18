@@ -80,11 +80,11 @@ const config: Config = {
         main: {
           DEFAULT: "#E1DEF0",
           100: "#F3EFFD",
-
-          
         },
       },
-      backgroundImage: {},
+      backgroundImage: {
+        'recent': "linear-gradient(90deg, #06061A 17.14%, #0F0D24 39.54%, #17132E 72.71%, #17132E 100%)",
+      },
       shadow: {
         primary: "0px 0px 0px 6px rgba(128, 102, 255, 0.25)",
       },

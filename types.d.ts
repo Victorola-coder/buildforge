@@ -14,3 +14,15 @@ interface LinksProps {
   name: string;
   href: string;
 }
+
+type UsePrevNextButtonsType = {
+  prevBtnDisabled: boolean;
+  nextBtnDisabled: boolean;
+  onPrevButtonClick: () => void;
+  onNextButtonClick: () => void;
+};
+
+interface SvgProps extends React.SVGProps<SVGSVGElement> {
+  className?: string;
+  
+}

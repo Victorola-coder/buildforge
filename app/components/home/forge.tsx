@@ -38,7 +38,7 @@ export default function Main() {
   const isDisabled = !validEmail(email);
 
   return (
-    <div className="mx-[122px] flex flex-row items-center justify-between">
+    <div className="md:mt-[85px] md:mx-[122px] flex flex-row items-center justify-between">
       <div className="max-w-[541px] flex flex-col gap-[30px]">
         <h1 className="md:text-[32px] mt-[5px] font-satoshiBold font-bold text-main md:leading-[48px] md:tracking-[-1.28px]">
           wtf*&#!% is buildforge?
