@@ -1,3 +1,5 @@
+declare module "aos";
+
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   disabled?: boolean;
   loading?: boolean;
