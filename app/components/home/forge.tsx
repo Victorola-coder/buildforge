@@ -7,7 +7,6 @@ import { Button } from "../ui";
 import { useState } from "react";
 import Image from "next/legacy/image";
 
-
 export default function Main() {
   const [email, setEmail] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
@@ -28,9 +27,7 @@ export default function Main() {
       const data = await res.json(); // Parse JSON response
 
       if (!res.ok) {
-        throw new Error(
-          data.error || "Failed to subscribe"
-        );
+        throw new Error(data.error || "Failed to subscribe");
       }
 
       toast.success(data.message || "Successfully subscribed!");
@@ -55,27 +52,28 @@ export default function Main() {
   const isDisabled = !validEmail(email);
 
   return (
-    <div className="md:mt-[85px] md:mx-[122px] flex flex-row items-center justify-between">
-      <div className="max-w-[541px] flex flex-col gap-[30px]">
-        <h1 className="md:text-[32px] mt-[5px] font-satoshiBold font-bold text-main md:leading-[48px] md:tracking-[-1.28px]">
-          wtf*&#!% is buildforge?
+    <div className="mt-[58px] mx-[22px] md:mt-[85px] md:mx-[122px] md:flex md:flex-row md:items-center md:justify-between">
+      <div className="flex flex-col md:max-w-[541px] gap-[30px]">
+        <h1 className="text-[24px] leading-[48px] tracking-[-0.96px] md:text-[32px] mt-[5px] font-satoshiBold font-bold text-main md:leading-[48px] md:tracking-[-1.28px]">
+          wtt
+          <span className="font-bold font-satBoldI">*&#!%</span> is buildforge?
         </h1>
-        <p className="md:text-[18px] font-clash font-normal text-main md:leading-[26px] md:tracking-[-0.18px]">
+        <p className="text-[18px] font-clash font-normal text-main md:leading-[26px] md:tracking-[-0.18px]">
           hey yo! welcome to the buildforge, a community of first time & early
           stage founders, builders and shippers working on their ideas. helping
           them go from 0-100.
         </p>
-        <p className="md:text-[18px] font-clash font-normal text-main md:leading-[26px] md:tracking-[-0.18px]">
+        <p className="text-[18px] font-clash font-normal text-main md:leading-[26px] md:tracking-[-0.18px]">
           the amazing thing? we don’t give af about your ideas no matter how
           crappy it is. if you are building on-chain (web3) or off-chain (web2),
           we will hold your hands and take you above the clouds.
         </p>
-        <p className="md:text-[18px] font-clash font-normal text-main md:leading-[26px] md:tracking-[-0.18px]">
+        <p className="text-[18px] font-clash font-normal text-main md:leading-[26px] md:tracking-[-0.18px]">
           btw, we share useful resources every week via a newsletter with
           builders. enter your email below and we’ll welcome you with a starter
           pack. see ya!
         </p>
-        <div className="flex flex-row items-center md:gap-[15px]">
+        <div className="flex flex-col gap-[12px] md:flex md:flex-row md:items-center md:gap-[15px]">
           <Link
             href="https://chat.whatsapp.com/LrGkqCkEUkoDFg8UVKuZD4"
             target="_blank"
@@ -112,7 +110,7 @@ export default function Main() {
       </div>
 
       <div>
-        <figure>
+        <figure className="hidden md:block">
           <Image
             height={300}
             width={500}
@@ -127,13 +125,14 @@ export default function Main() {
         {/* form */}
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col items-center justify-center gap-[21px] rounded-[18px] border-[1px] border-[#232328] bg-[#0D0D11] px-[13px] pt-[20px] pb-[13px]"
+          className="flex flex-col mt-[39px] md:mt-0 items-center justify-center gap-[21px] rounded-[18px] border-[1px] border-[#232328] bg-[#0D0D11] px-[13px] pt-[20px] pb-[13px]"
         >
           <header>
-            <h3 className="md:text-[20px] text-center md:leading-[24px] tracking-[-0.5px] font-satBold font-bold text-main md:tracking-[-0.5px]">
+            <h3 className="text-[18px] leading-[24px] md:text-[20px] text-center md:leading-[24px] tracking-[-0.5px] font-satBold font-bold text-[#F3EFFD] md:tracking-[-0.5px]">
               join the builforge bytes
             </h3>
           </header>
+
           <fieldset>
             <input
               type="email"

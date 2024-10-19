@@ -54,7 +54,7 @@ export const PrevButton: React.FC<PropType> = (props) => {
     >
       <ArrowLeft
         className={clsx(
-          "h-[56px] p-[11px] w-[56px] border-[1.67px] border-[#312E49] rounded-[116.667px] active:bg-[#8066FF26] hover:border-primary-100 hover:text-primary-100 transition-all duration-300"
+          "h-[48px] w-[48px] md:h-[56px] md:w-[56px] p-[11px] border-[1.67px] border-[#312E49] rounded-[116.667px] active:bg-[#8066FF26] hover:border-primary-100 hover:text-primary-100 transition-all duration-300"
         )}
       />
       {children}
@@ -71,7 +71,7 @@ export const NextButton: React.FC<PropType> = (props) => {
       type="button"
       {...restProps}
     >
-      <ArrowRight className="h-[56px] w-[56px] p-[11px] border-[1.67px] border-[#312E49] rounded-[116.667px] active:bg-[#8066FF26] hover:border-primary-100 hover:text-primary-100 transition-all duration-300" />
+      <ArrowRight className="w-[48px] h-[48px] md:h-[56px] md:w-[56px] p-[11px] border-[1.67px] border-[#312E49] rounded-[116.667px] active:bg-[#8066FF26] hover:border-primary-100 hover:text-primary-100 transition-all duration-300" />
       {children}
     </button>
   );

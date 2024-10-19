@@ -1,8 +1,9 @@
 "use client";
 
+import clsx from "clsx";
 import Link from "next/link";
-import Image from "next/legacy/image";
 import { useState } from "react";
+import Image from "next/legacy/image";
 import logo from "@/public/images/logo.svg";
 
 export default function Navbar() {
@@ -19,7 +20,7 @@ export default function Navbar() {
   const [isOpened, setIsOpened] = useState<boolean>(false);
   return (
     <header className="mx-[22px] py-[37px] md:py-[44px] md:mx-[122px]">
-      <nav className="bg-[#0D0D11] border-[2px] border-[#232328] py-[10px] px-[15px] rounded-[12px] md:py-0 md:px-0 md:rounded-[59px] md:pl-[20px] md:pr-[13px] flex flex-row items-center justify-between">
+      <nav className="bg-[#0D0D11] border-[2px] border-[#232328] py-[7px] px-[15px] rounded-[12px] md:py-0 md:px-0 md:rounded-[59px] md:pl-[20px] md:pr-[13px] flex flex-row items-center justify-between">
         <div
           className="flex flex-row gap-1.5 md:gap-[10px] items-center group"
           id="logo"
@@ -62,56 +63,57 @@ export default function Navbar() {
           <div className="md:hidden">
             <div className="">
               <button
-                className="space-y-1.5 focus:outline-none_ focus:ring_ focus:ring-[#111111]/60_ p-1 pb-1.5 rounded-md group"
+                className="space-y-1.5 group rounded-[12px] border border-solid border-[#232328] px-[12px] py-[15px] "
                 onClick={() => setIsOpened(!isOpened)}
               >
                 <div
-                  className={`rounded-full h-1 bg-[#FEFEFE] group-hover:bg-main transition-all duration-300 ${
+                  className={clsx(
+                    "rounded-full h-1 bg-[#FEFEFE] group-hover:bg-main transition-all duration-300",
                     isOpened
                       ? "w-[30px] rotate-45 translate-y-3.5"
                       : "w-[30px] rotate-0 translate-x-0"
-                  }`}
+                  )}
                 />
                 <div
-                  className={`rounded-full h-1 bg-[#FEFEFE] group-hover:bg-main transition-all duration-300  ${
+                  className={clsx(
+                    "rounded-full h-1 bg-[#FEFEFE] group-hover:bg-main transition-all duration-300",
                     isOpened ? "opacity-0" : "opacity-100"
-                  }`}
+                  )}
                 />
                 <div
-                  className={`rounded-full h-1 bg-[#FEFEFE] group-hover:bg-main transition-all duration-300 ${
+                  className={clsx(
+                    "rounded-full h-1 bg-[#FEFEFE] group-hover:bg-main transition-all duration-300",
                     isOpened
                       ? "w-[30px] -rotate-45 -translate-y-1.5"
                       : "w-[30px] rotate-0"
-                  }`}
+                  )}
                 />
               </button>
               <div>
                 <div
-                  className={`z-[100] min-h-[100px] mx-[22px] border-b absolute bg-primary/50 px-[26px] py-[28px] block  mt-[70px] md:hidden transition-all duration-300 ${
-                    isOpened ? "-translate-y-[50px]" : "-translate-y-[250%]"
-                  } pt-4 left-0 right-0`}
+                  className={clsx(
+                    "z-[100] min-h-[100px] mx-[22px]_ border-b absolute bg-dark px-[26px] py-[28px] block  mt-[60px] md:hidden transition-all duration-300",
+                    isOpened ? "-translate-y-[50px]" : "-translate-y-[250%]",
+                    "pt-4 left-0 right-0"
+                  )}
                 >
-                  <div className="px-3_ mx-auto">
-                    <ul className="flex flex-col items-start space-y-2">
-                      <li>
-                        <Link href={"/"} target={""}>
+                  <div className="flex flex-col gap-2">
+                    <ul>
+                      <li onClick={() => setIsOpened(!isOpened)}>
+                        <Link href="/episodes">
                           <h4 className="text-[#F3EFFD] text-[18px] leading-[48px] font-clash">
-                            products
+                            episodes
                           </h4>
                         </Link>
                       </li>
                     </ul>
-                  </div>
-                  <div
-                    onClick={() => setIsOpened(!isOpened)}
-                    className="px-5 mx-auto"
-                  >
                     <Link
                       href="https://chat.whatsapp.com/LrGkqCkEUkoDFg8UVKuZD4"
                       target="_blank"
+                      onClick={() => setIsOpened(!isOpened)}
                       className="md:inline-block"
                     >
-                      <button className="bg-primary hover:bg-primary/50 transition-all duration-300 active:bg-primary/80 active:scale-95 rounded-[30px] px-[20px] py-[12.5px] text-white font-medium text-[18px] leading-normal font-clashMed">
+                      <button className="bg-primary hover:bg-primary-100 active:bg-primary-200 active:shadow-primary transition-all duration-300 active:scale-95 rounded-[10px] px-[21px] py-[12.5px] text-white font-medium text-[18px] leading-normal font-clashMed">
                         join the buildforge
                       </button>
                     </Link>
