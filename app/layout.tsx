@@ -1,8 +1,9 @@
 import "./global.css";
 import clsx from "clsx";
-import { AOS } from "./components/global";
+import { Toaster } from "sonner";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { AOS } from "./components/global";
 import { Footer, Navbar } from "./components/global";
 
 const clashmed = localFont({
@@ -117,6 +118,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <Toaster position="top-right" richColors />
       </body>
     </html>
   );

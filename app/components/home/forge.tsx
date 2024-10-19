@@ -5,25 +5,37 @@ import Image from "next/legacy/image";
 import Link from "next/link";
 import { useState } from "react";
 import { Button } from "../ui";
-
+import { toast } from "sonner";
 export default function Main() {
   const [email, setEmail] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
 
-  const handleBlur = () => {
-    if (email.length > 0) {
-      setEmail("");
-    }
-  };
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("submitted");
     setLoading(true);
-
     setTimeout(() => {
       setLoading(false);
+      setEmail("");
+      toast.success("You have been subscribed to the buildforge newsletter!");
     }, 2000);
+
+    // try {
+    //   const res = await fetch("/api/subscribe", {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify({ email }),
+    //   });
+
+    //   if (!res.ok) {
+    //     throw new Error("Failed to subscribe to the buildforge newsletter.");
+    //   }
+    // } catch (error) {
+    //   console.log(error);
+    //   toast.error("Failed to subscribe to the buildforge newsletter.");
+    // }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -129,7 +141,6 @@ export default function Main() {
               )}
               value={email}
               onChange={handleChange}
-              onBlur={handleBlur}
             />
           </fieldset>
           <fieldset>

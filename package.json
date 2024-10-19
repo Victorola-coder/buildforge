@@ -1,5 +1,5 @@
 {
-  "name": "forgebuild",
+  "name": "buildforge",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -15,7 +15,8 @@
     "framer-motion": "^11.11.9",
     "next": "14.2.15",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "sonner": "^1.5.0"
   },
   "devDependencies": {
     "@types/aos": "^3.0.7",
