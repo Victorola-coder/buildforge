@@ -17,7 +17,7 @@ export default function Main() {
     setTimeout(() => {
       setLoading(false);
       setEmail("");
-      toast.success("You have been subscribed to the buildforge newsletter!");
+      toast.success("success 🙌🏼");
     }, 2000);
 
     // try {
