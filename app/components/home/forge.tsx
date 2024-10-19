@@ -12,30 +12,33 @@ export default function Main() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("submitted");
     setLoading(true);
-    setTimeout(() => {
+
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await res.json(); // Parse JSON response
+
+      if (!res.ok) {
+        throw new Error(
+          data.error || "Failed to subscribe"
+        );
+      }
+
+      toast.success(data.message || "Successfully subscribed!");
+    } catch (error) {
+      console.error(error);
+      toast.error((error as Error).message);
+    } finally {
       setLoading(false);
-      setEmail("");
-      toast.success("success 🙌🏼");
-    }, 2000);
-
-    // try {
-    //   const res = await fetch("/api/subscribe", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify({ email }),
-    //   });
-
-    //   if (!res.ok) {
-    //     throw new Error("Failed to subscribe to the buildforge newsletter.");
-    //   }
-    // } catch (error) {
-    //   console.log(error);
-    //   toast.error("Failed to subscribe to the buildforge newsletter.");
-    // }
+      setEmail(""); // Reset email after the operation
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
