@@ -1,9 +1,9 @@
 "use client";
 
-import { EmblaCarouselType } from "embla-carousel";
-import { ComponentPropsWithRef, useCallback, useEffect, useState } from "react";
-import { ArrowLeft, ArrowRight } from "../global/svgs";
 import clsx from "clsx";
+import { EmblaCarouselType } from "embla-carousel";
+import { ArrowLeft, ArrowRight } from "../global/svgs";
+import { ComponentPropsWithRef, useCallback, useEffect, useState } from "react";
 
 export const usePrevNextButtons = (
   emblaApi: EmblaCarouselType | undefined

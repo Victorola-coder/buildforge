@@ -1,11 +1,13 @@
 "use client";
 
 import clsx from "clsx";
-import Image from "next/legacy/image";
 import Link from "next/link";
-import { useState } from "react";
-import { Button } from "../ui";
 import { toast } from "sonner";
+import { Button } from "../ui";
+import { useState } from "react";
+import Image from "next/legacy/image";
+
+
 export default function Main() {
   const [email, setEmail] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
