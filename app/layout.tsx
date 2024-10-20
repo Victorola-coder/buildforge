@@ -74,7 +74,6 @@ export const metadata: Metadata = {
     description: "we're bullish on first time & early stage builders",
     siteName: "buildforge",
     locale: "en_US",
-    emails: ["hello@buildforge.xyz"],
     images: [
       {
         url: "https://opengraph.b-cdn.net/production/images/99b81e53-b7d5-4dc5-8913-4382d2271596.svg?token=XH9ro77A1T0vWB-lYgwvzJW4jZjLG5nrKHvirdKML5U&height=436&width=1200&expires=33265447449",
