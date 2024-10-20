@@ -39,11 +39,10 @@ const satoshiItalic = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL("https://buildforge.xyz"),
   icons: {
-    // icon: "/favicon.svg",
     icon: "/icon.png",
   },
   title: "buildforge - Meet, connect, Vibe with people of like minds",
-  description: "we’re bullish on first time & early stage builders",
+  description: "we're bullish on first time & early stage builders",
   applicationName: "buildforge Web Application",
   authors: [{ name: "buildforge", url: "https://buildforge.xyz" }],
   keywords: [
@@ -70,18 +69,30 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    url: "https://buildgforge..app",
+    url: "https://buildforge.xyz",
     title: "buildforge - Meet, connect, Vibe with people of like minds",
-    description: "we’re bullish on first time & early stage builders",
+    description: "we're bullish on first time & early stage builders",
     siteName: "buildforge",
     locale: "en_US",
-    emails: ["hello@builforge.xyz"],
+    emails: ["hello@buildforge.xyz"],
+    images: [
+      {
+        url: "https://opengraph.b-cdn.net/production/images/99b81e53-b7d5-4dc5-8913-4382d2271596.svg?token=XH9ro77A1T0vWB-lYgwvzJW4jZjLG5nrKHvirdKML5U&height=436&width=1200&expires=33265447449",
+        width: 1200,
+        height: 630,
+        alt: "buildforge OG Image",
+      },
+    ],
   },
   twitter: {
     site: "@pxxl_space",
     creator: "@pxxl_space",
-    title: "buildforge - Deploy your projects faster",
-    description: "we’re bullish on first time & early stage builders",
+    title: "buildforge - Meet, connect, Vibe with people of like minds",
+    description: "we're bullish on first time & early stage builders",
+    card: "summary_large_image",
+    images: [
+      "https://opengraph.b-cdn.net/production/images/99b81e53-b7d5-4dc5-8913-4382d2271596.svg?token=XH9ro77A1T0vWB-lYgwvzJW4jZjLG5nrKHvirdKML5U&height=436&width=1200&expires=33265447449",
+    ],
   },
   appleWebApp: {
     capable: true,
