@@ -63,28 +63,28 @@ export default function Navbar() {
           <div className="md:hidden">
             <div className="">
               <button
-                className="space-y-1.5 group rounded-[12px] border border-solid border-[#232328] px-[12px] py-[15px] "
+                className="space-y-1.5 group rounded-[12px] border border-solid border-[#232328] px-[12px] py-[12px]"
                 onClick={() => setIsOpened(!isOpened)}
               >
                 <div
                   className={clsx(
-                    "rounded-full h-1 bg-[#FEFEFE] group-hover:bg-main transition-all duration-300",
+                    "rounded-full h-0.5 bg-[#FEFEFE] group-hover:bg-main transition-all duration-300",
                     isOpened
-                      ? "w-[30px] rotate-45 translate-y-3.5"
+                      ? "w-[30px] rotate-45 translate-y-2.5"
                       : "w-[30px] rotate-0 translate-x-0"
                   )}
                 />
                 <div
                   className={clsx(
-                    "rounded-full h-1 bg-[#FEFEFE] group-hover:bg-main transition-all duration-300",
+                    "rounded-full h-0.5 bg-[#FEFEFE] group-hover:bg-main transition-all duration-300",
                     isOpened ? "opacity-0" : "opacity-100"
                   )}
                 />
                 <div
                   className={clsx(
-                    "rounded-full h-1 bg-[#FEFEFE] group-hover:bg-main transition-all duration-300",
+                    "rounded-full h-0.5 bg-[#FEFEFE] group-hover:bg-main transition-all duration-300",
                     isOpened
-                      ? "w-[30px] -rotate-45 -translate-y-1.5"
+                      ? "w-[30px] -rotate-45 -translate-y-[5px]"
                       : "w-[30px] rotate-0"
                   )}
                 />

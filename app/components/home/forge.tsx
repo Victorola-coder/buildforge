@@ -52,28 +52,28 @@ export default function Main() {
   const isDisabled = !validEmail(email);
 
   return (
-    <div className="mt-[58px] mx-[22px] md:mt-[85px] md:mx-[122px] md:flex md:flex-row md:items-center md:justify-between">
-      <div className="flex flex-col md:max-w-[541px] gap-[30px]">
-        <h1 className="text-[24px] leading-[48px] tracking-[-0.96px] md:text-[32px] mt-[5px] font-satoshiBold font-bold text-main md:leading-[48px] md:tracking-[-1.28px]">
-          wtt
+    <div className="mt-[58px] mx-[22px] lg:mt-[85px] lg:mx-[122px] lg:gap-[10px] lg:flex lg:flex-row lg:items-center lg:justify-between">
+      <div className="flex flex-col lg:max-w-[541px] gap-[30px]">
+        <h1 className="text-[24px] leading-[48px] tracking-[-0.96px] lg:text-[32px] mt-[5px] font-satoshiBold font-bold text-main lg:leading-[48px] lg:tracking-[-1.28px]">
+          wtf
           <span className="font-bold font-satBoldI">*&#!%</span> is buildforge?
         </h1>
-        <p className="text-[18px] font-clash font-normal text-main md:leading-[26px] md:tracking-[-0.18px]">
+        <p className="text-[18px] font-clash font-normal text-main lg:leading-[26px] lg:tracking-[-0.18px]">
           hey yo! welcome to the buildforge, a community of first time & early
           stage founders, builders and shippers working on their ideas. helping
           them go from 0-100.
         </p>
-        <p className="text-[18px] font-clash font-normal text-main md:leading-[26px] md:tracking-[-0.18px]">
+        <p className="text-[18px] font-clash font-normal text-main lg:leading-[26px] lg:tracking-[-0.18px]">
           the amazing thing? we don’t give af about your ideas no matter how
           crappy it is. if you are building on-chain (web3) or off-chain (web2),
           we will hold your hands and take you above the clouds.
         </p>
-        <p className="text-[18px] font-clash font-normal text-main md:leading-[26px] md:tracking-[-0.18px]">
+        <p className="text-[18px] font-clash font-normal text-main lg:leading-[26px] lg:tracking-[-0.18px]">
           btw, we share useful resources every week via a newsletter with
           builders. enter your email below and we’ll welcome you with a starter
           pack. see ya!
         </p>
-        <div className="flex flex-col gap-[12px] md:flex md:flex-row md:items-center md:gap-[15px]">
+        <div className="flex flex-col gap-[12px] lg:flex lg:flex-row lg:items-center lg:gap-[15px]">
           <Link
             href="https://chat.whatsapp.com/LrGkqCkEUkoDFg8UVKuZD4"
             target="_blank"
@@ -84,7 +84,7 @@ export default function Main() {
           </Link>
 
           <Link href="https://x.com/thebuildforge" target="_blank">
-            <button className="border-solid border-[#232328] border-[1.5px] hover:border-primary-100 active:bg-[#8066FF26] active:shadow-primary transition-all duration-300 active:scale-95 rounded-[10px] px-[21px] py-[12.5px] text-[#EEEEEE] hover:text-primary-100 font-medium md:text-[17px] leading-normal font-clashMed md:tracking-[-0.17px] w-[140px]">
+            <button className="border-solid border-[#232328] border-[1.5px] hover:border-primary-100 active:bg-[#8066FF26] active:shadow-primary transition-all duration-300 active:scale-95 rounded-[10px] px-[21px] py-[12.5px] text-[#EEEEEE] hover:text-primary-100 font-medium lg:text-[17px] leading-normal font-clashMed lg:tracking-[-0.17px] w-[140px]">
               follow on x
             </button>
           </Link>
@@ -110,7 +110,7 @@ export default function Main() {
       </div>
 
       <div>
-        <figure className="hidden md:block">
+        <figure className="hidden lg:block">
           <Image
             height={300}
             width={500}
@@ -125,10 +125,10 @@ export default function Main() {
         {/* form */}
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col mt-[39px] md:mt-0 items-center justify-center gap-[21px] rounded-[18px] border-[1px] border-[#232328] bg-[#0D0D11] px-[13px] pt-[20px] pb-[13px]"
+          className="flex flex-col mt-[39px] lg:mt-0 items-center justify-center gap-[21px] rounded-[18px] border-[1px] border-[#232328] bg-[#0D0D11] px-[13px] pt-[20px] pb-[13px]"
         >
           <header>
-            <h3 className="text-[18px] leading-[24px] md:text-[20px] text-center md:leading-[24px] tracking-[-0.5px] font-satBold font-bold text-[#F3EFFD] md:tracking-[-0.5px]">
+            <h3 className="text-[18px] leading-[24px] lg:text-[20px] text-center lg:leading-[24px] tracking-[-0.5px] font-satBold font-bold text-[#F3EFFD] lg:tracking-[-0.5px]">
               join the builforge bytes
             </h3>
           </header>
@@ -141,7 +141,7 @@ export default function Main() {
                 validEmail(email)
                   ? "border-primary-100 text-main-100"
                   : "border-[#232328] focus:border-[#A8A5C0] text-[#A8A5C0]",
-                "w-[360px] outline-none transition-all duration-300 border-[1px] bg-dark rounded-[10px] px-[20px] py-[12.5px] placeholder:text-[#A8A5C0] font-clash text-[15px] font-normal md:leading-[24px] md:tracking-[-0.15px]"
+                "w-[310px] lg:w-[360px] outline-none transition-all duration-300 border-[1px] bg-dark rounded-[10px] px-[20px] py-[12.5px] placeholder:text-[#A8A5C0] font-clash text-[15px] font-normal lg:leading-[24px] lg:tracking-[-0.15px]"
               )}
               value={email}
               onChange={handleChange}
@@ -151,7 +151,7 @@ export default function Main() {
             <Button
               disabled={isDisabled}
               loading={loading}
-              className="w-[360px] text-center mx-auto block"
+              className="w-[310px] lg:w-[360px] text-center mx-auto block"
             >
               subscribe
             </Button>
