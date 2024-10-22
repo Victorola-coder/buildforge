@@ -84,8 +84,8 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    site: "@pxxl_space",
-    creator: "@pxxl_space",
+    site: "@thebuildforge",
+    creator: "@thebuildforge",
     title: "buildforge - Meet, connect, Vibe with people of like minds",
     description: "we're bullish on first time & early stage builders",
     card: "summary_large_image",

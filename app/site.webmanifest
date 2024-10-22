@@ -1,6 +1,6 @@
 {
-  "name": "",
-  "short_name": "",
+  "name": "buildforge",
+  "short_name": "forge",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
