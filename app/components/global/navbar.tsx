@@ -8,10 +8,6 @@ import logo from "@/public/images/logo.svg";
 
 export default function Navbar() {
   const links: LinksProps[] = [
-    // {
-    //   name: "products",
-    //   href: "/products",
-    // },
     {
       name: "episodes",
       href: "/episodes",

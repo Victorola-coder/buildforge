@@ -32,7 +32,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
         </div>
       </div>
 
-      <div className="mt-[20px]">
+      <div className="mt-[60px]">
         <div className="flex flex-row gap-[22px] items-center justify-center ">
           <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
           <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />

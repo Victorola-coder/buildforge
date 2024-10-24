@@ -10,17 +10,9 @@ export default function Hero() {
         on first time & early stage{" "}
         <div className="">
           <TypeAnimation
-            sequence={[
-              "Founders",
-              1000,
-              "Builders",
-              1000,
-              "Shippers",
-              1000,
-              "Developers",
-            ]}
+            sequence={["Founders", 1000, "Builders", 1000, "Shippers"]}
             wrapper="div"
-            speed={50}
+            speed={99}
             style={{ display: "inline-block" }}
             repeat={Infinity}
           />

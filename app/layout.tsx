@@ -116,7 +116,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={clsx(
-          "lowercase",
+          "lowercase relative overlay",
           clashmed.variable,
           clashreg.variable,
           satoshi.variable,
