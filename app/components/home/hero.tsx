@@ -20,10 +20,9 @@ export default function Hero() {
               "Developers",
             ]}
             wrapper="div"
-            speed={300}
+            speed={99}
             style={{ display: "inline-block" }}
             repeat={Infinity}
-            omitDeletionAnimation={true}
           />
         </div>
       </h1>

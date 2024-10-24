@@ -1,26 +1,27 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+import { NextResponse } from "next/server";
 import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method === "POST") {
-    const { picture, link } = req.body;
+export async function POST(request: Request) {
+  try {
+    const { picture, link } = await request.json(); // Parse the request body
 
-    try {
-      const episode = await prisma.episode.create({
-        data: {
-          picture,
-          link,
-        },
-      });
-      res.status(201).json(episode);
-    } catch (error) {
-        console.log(error)
-      res.status(500).json({ error: "Failed to create episode" });
-    }
-  } else {
-    res.setHeader("Allow", ["POST"]);
-    res.status(405).end(`Method ${req.method} Not Allowed`);
+    // Create a new episode using Prisma
+    const episode = await prisma.episode.create({
+      data: {
+        picture,
+        link,
+      },
+    });
+
+    // Return the created episode as a JSON response
+    return NextResponse.json(episode, { status: 201 });
+  } catch (error) {
+    console.error(error);
+    return NextResponse.json(
+      { error: "Failed to create episode" },
+      { status: 500 }
+    );
   }
 }
