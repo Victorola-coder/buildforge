@@ -19,7 +19,7 @@ export default function Navbar() {
   ];
   const [isOpened, setIsOpened] = useState<boolean>(false);
   return (
-    <header className="mx-[22px] py-[37px] md:py-[44px] md:mx-[122px]">
+    <header className="mx-[22px] py-[37px] md:py-[44px] md:mx-[222px]">
       <nav className="bg-[#0D0D11] border-[2px] border-[#232328] py-[7px] px-[15px] rounded-[12px] md:py-0 md:px-0 md:rounded-[59px] md:pl-[20px] md:pr-[13px] flex flex-row items-center justify-between">
         <div
           className="flex flex-row gap-1.5 md:gap-[10px] items-center group"

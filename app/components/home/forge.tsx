@@ -52,7 +52,7 @@ export default function Main() {
   const isDisabled = !validEmail(email);
 
   return (
-    <div className="mt-[58px] mx-[22px] lg:mt-[85px] lg:mx-[122px] lg:gap-[10px] lg:flex lg:flex-row lg:items-center lg:justify-between">
+    <div className="mt-[58px] mx-[22px] lg:mt-[85px] lg:mx-[122px] lg:gap-[69px] lg:flex lg:flex-row lg:items-center lg:justify-center">
       <div className="flex flex-col lg:max-w-[541px] gap-[30px]">
         <h1 className="text-[24px] leading-[48px] tracking-[-0.96px] lg:text-[32px] mt-[5px] font-satoshiBold font-bold text-main lg:leading-[48px] lg:tracking-[-1.28px]">
           wtf
