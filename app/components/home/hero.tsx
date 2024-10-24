@@ -20,7 +20,7 @@ export default function Hero() {
               "Developers",
             ]}
             wrapper="div"
-            speed={10}
+            speed={50}
             style={{ display: "inline-block" }}
             repeat={Infinity}
           />
