@@ -125,7 +125,7 @@ export default function Main() {
         {/* form */}
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col mt-[39px] lg:mt-0 items-center justify-center gap-[21px] rounded-[18px] border-[1px] border-[#232328] bg-[#0D0D11] px-[13px] pt-[20px] pb-[13px]"
+          className="flex flex-col mt-[50px] items-center justify-center gap-[21px] rounded-[18px] border-[1px] border-[#232328] bg-[#0D0D11] px-[13px] pt-[20px] pb-[13px]"
         >
           <header>
             <h3 className="text-[18px] leading-[24px] lg:text-[20px] text-center lg:leading-[24px] tracking-[-0.5px] font-satBold font-bold text-[#F3EFFD] lg:tracking-[-0.5px]">
