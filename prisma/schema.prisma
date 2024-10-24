@@ -13,3 +13,11 @@ model Subscriber {
   email     String   @unique
   createdAt DateTime @default(now())
 }
+
+
+model Episode {
+  id        Int      @id @default(autoincrement())
+  picture   String
+  link      String
+  createdAt DateTime @default(now())
+}
