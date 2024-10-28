@@ -12,7 +12,7 @@ export default function Hero() {
           <TypeAnimation
             sequence={["Founders", 1000, "Builders", 1000, "Shippers"]}
             wrapper="div"
-            speed={99}
+            speed={{ type: "keyStrokeDelayInMs", value: 250 }}
             style={{ display: "inline-block" }}
             repeat={Infinity}
           />
