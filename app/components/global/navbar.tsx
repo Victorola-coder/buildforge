@@ -34,7 +34,7 @@ export default function Navbar() {
   return (
     <header
       className={clsx(
-        "sticky z-[10000000000000000000] top-0 mx-[22px] py-[37px] md:py-[44px] md:mx-[222px]",
+        "sticky z-[1000] top-0 mx-[22px] py-[37px] md:py-[44px] md:mx-[222px]",
         isScrolled ? "bg-opacity-50" : "bg-opacity-100"
       )}
     >
