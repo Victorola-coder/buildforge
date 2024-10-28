@@ -18,15 +18,15 @@ export default function Navbar() {
     <header className="mx-[22px] py-[37px] md:py-[44px] md:mx-[222px]">
       <nav className="bg-[#0D0D11] border-[2px] border-[#232328] py-[7px] px-[15px] rounded-[12px] md:py-0 md:px-0 md:rounded-[59px] md:pl-[20px] md:pr-[13px] flex flex-row items-center justify-between">
         <div
-          className="flex flex-row gap-1.5 md:gap-[10px] items-center group"
+          className="flex flex-row gap-1.5 md:gap-[10px] items-center"
           id="logo"
         >
           <Image
             src={logo}
             alt="logo"
-            className="w-[20.326px] md:w-full group-hover:-rotate-[20deg] transition-all duration-300"
+            className="w-[20.326px] md:w-full transition-all duration-300"
           />
-          <h3 className="text-[#EEEEEE] group-hover:text-primary transition-all duration-300 text-[20px] leading-[48px] font-medium font-satMed md:leading-[81.6px] tracking-tight md:text-[24px]">
+          <h3 className="text-[#EEEEEE] transition-all duration-300 text-[20px] leading-[48px] font-medium font-satMed md:leading-[81.6px] tracking-tight md:text-[24px]">
             buildforge
           </h3>
         </div>
