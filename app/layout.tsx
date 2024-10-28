@@ -116,7 +116,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={clsx(
-          "lowercase relative overlay",
+          "lowercase",
           clashmed.variable,
           clashreg.variable,
           satoshi.variable,
@@ -124,6 +124,7 @@ export default function RootLayout({
           satoshiItalic.variable
         )}
       >
+        <div className="overlay"></div>
         <AOS />
         <Navbar />
         {children}

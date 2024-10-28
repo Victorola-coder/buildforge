@@ -2,7 +2,7 @@
 
 import clsx from "clsx";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/legacy/image";
 import logo from "@/public/images/logo.svg";
 
@@ -14,9 +14,36 @@ export default function Navbar() {
     },
   ];
   const [isOpened, setIsOpened] = useState<boolean>(false);
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="mx-[22px] py-[37px] md:py-[44px] md:mx-[222px]">
-      <nav className="bg-[#0D0D11] border-[2px] border-[#232328] py-[7px] px-[15px] rounded-[12px] md:py-0 md:px-0 md:rounded-[59px] md:pl-[20px] md:pr-[13px] flex flex-row items-center justify-between">
+    <header
+      className={clsx(
+        "sticky z-[10000000000000000000] top-0 mx-[22px] py-[37px] md:py-[44px] md:mx-[222px]",
+        isScrolled ? "bg-opacity-50" : "bg-opacity-100"
+      )}
+    >
+      <nav
+        className={clsx(
+          "bg-[#0D0D11] border-[2px] border-[#232328] py-[7px] px-[15px] rounded-[12px] md:py-0 md:px-0 md:rounded-[59px] md:pl-[20px] md:pr-[13px] flex flex-row items-center justify-between",
+          isScrolled ? "bg-opacity-50" : "bg-opacity-100"
+        )}
+      >
         <div
           className="flex flex-row gap-1.5 md:gap-[10px] items-center"
           id="logo"
