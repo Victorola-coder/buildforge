@@ -44,7 +44,8 @@ export default function Navbar() {
           isScrolled ? "bg-opacity-50" : "bg-opacity-100"
         )}
       >
-        <div
+        <Link
+          href="/"
           className="flex flex-row gap-1.5 md:gap-[10px] items-center"
           id="logo"
         >
@@ -56,7 +57,7 @@ export default function Navbar() {
           <h3 className="text-[#EEEEEE] transition-all duration-300 text-[20px] leading-[48px] font-medium font-satMed md:leading-[81.6px] tracking-tight md:text-[24px]">
             buildforge
           </h3>
-        </div>
+        </Link>
 
         <div className="hidden md:flex flex-row gap-3.5 items-center">
           <ul>
