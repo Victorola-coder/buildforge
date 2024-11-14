@@ -31,7 +31,7 @@ export default async function sendMail(
 
     // Pass the otp variable along with other data
     const template = await ejs.renderFile(location, {
-      LOGO: "https://cdn.dropp.cloud/k2gp9r.svg",
+      LOGO: "https://cdn.dropp.cloud/",
       otp: otp,
       ...data,
     });

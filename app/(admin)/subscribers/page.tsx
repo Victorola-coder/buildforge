@@ -9,6 +9,13 @@ interface User {
   email: string;
 }
 
+interface ApiResponse {
+  subscribers: User[];
+  totalPages: number;
+  totalSubscribers: number;
+  currentPage: number;
+}
+
 export default function Subscribers() {
   const [users, setUsers] = useState<User[]>([]);
   const [totalPages, setTotalPages] = useState<number>(1);
@@ -25,14 +32,15 @@ export default function Subscribers() {
   const fetchUsers = useCallback(async (page: number, term: string = "") => {
     setIsLoading(true);
     try {
-      const response = await axios.get(
-        `/api/waitlist?page=${page}&limit=10&search=${term}`
+      const response = await axios.get<ApiResponse>(
+        `/api/subscribe?page=${page}&limit=10&search=${term}`
       );
-      const { users, totalPages, totalUsers } = response.data;
-      setUsers(users);
-      setCurrentPageUsers(users.slice(0, 10));
-      setTotalPages(totalPages);
-      setTotalEmails(totalUsers);
+      const { subscribers, totalPages, totalSubscribers } = response.data;
+
+      setUsers(subscribers || []);
+      setCurrentPageUsers(subscribers || []);
+      setTotalPages(totalPages || 1);
+      setTotalEmails(totalSubscribers || 0);
     } catch (error: unknown) {
       console.error("Error fetching users:", error);
       const errorMessage =
@@ -68,7 +76,7 @@ export default function Subscribers() {
     setUserToDelete(null);
 
     try {
-      const response = await fetch(`/api/waitlist`, {
+      const response = await fetch(`/api/subscribe`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -122,7 +130,7 @@ export default function Subscribers() {
     if (start > 1) {
       buttons.push(
         <button
-          key="page-1"
+          key="first-page"
           className="px-3 py-1 text-sm font-medium text-gray-500 bg-white rounded-md hover:bg-gray-100"
           onClick={() => handlePageChange(1)}
         >
@@ -130,7 +138,7 @@ export default function Subscribers() {
         </button>
       );
       if (start > 2) {
-        buttons.push(<span key="ellipsis1">...</span>);
+        buttons.push(<span key="start-ellipsis">...</span>);
       }
     }
 
@@ -152,11 +160,11 @@ export default function Subscribers() {
 
     if (end < totalPages) {
       if (end < totalPages - 1) {
-        buttons.push(<span key="ellipsis2">...</span>);
+        buttons.push(<span key="end-ellipsis">...</span>);
       }
       buttons.push(
         <button
-          key={`page-${totalPages}`}
+          key="last-page"
           className="px-3 py-1 text-sm font-medium text-gray-500 bg-white rounded-md hover:bg-gray-100"
           onClick={() => handlePageChange(totalPages)}
         >
@@ -172,7 +180,7 @@ export default function Subscribers() {
     <div className="min-h-screen bg-gray-100">
       <header className="px-[20px] py-[32px] grid place-items-center bg-white shadow">
         <h1 className="text-[40px] leading-[25.78px] text-[#3C096C] font-bold font-cab md:text-[40px] md:leading-[30.47px]">
-          Senti Waitlist
+          buildforge Subscribers
         </h1>
       </header>
       <div className="w-full px-4 py-8">

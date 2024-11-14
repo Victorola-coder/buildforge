@@ -39,48 +39,57 @@ export async function POST(req: NextRequest) {
   }
 }
 
-export async function GET(req: NextRequest) {
+export async function GET(request: Request) {
   try {
-    const { searchParams } = new URL(req.url);
+    const { searchParams } = new URL(request.url);
     const page = parseInt(searchParams.get("page") || "1");
     const limit = parseInt(searchParams.get("limit") || "10");
     const search = searchParams.get("search") || "";
 
+    // Make sure we have valid values before proceeding
+    if (isNaN(page) || isNaN(limit)) {
+      return new Response(
+        JSON.stringify({
+          message: "Invalid page or limit parameters",
+        }),
+        { status: 400 }
+      );
+    }
+
     const skip = (page - 1) * limit;
 
-    // Get paginated results
+    // Add your prisma query here
     const subscribers = await prisma.subscriber.findMany({
-      where: search
-        ? {
-            email: {
-              contains: search,
-              mode: "insensitive" as const,
-            },
-          }
-        : {},
+      where: {
+        email: {
+          contains: search,
+          mode: "insensitive",
+        },
+      },
       skip,
       take: limit,
     });
 
-    const total = await prisma.subscriber.count({
-      where: search
-        ? {
-            email: {
-              contains: search,
-              mode: "insensitive" as const,
-            },
-          }
-        : {},
+    const totalSubscribers = await prisma.subscriber.count({
+      where: {
+        email: {
+          contains: search,
+          mode: "insensitive",
+        },
+      },
     });
-    const totalPages = Math.ceil(total / limit);
 
-    return NextResponse.json({
-      success: true,
-      subscribers,
-      totalPages,
-      currentPage: page,
-      totalSubscribers: total,
-    });
+    const totalPages = Math.ceil(totalSubscribers / limit);
+
+    return new Response(
+      JSON.stringify({
+        subscribers,
+        totalPages,
+        totalSubscribers,
+        currentPage: page,
+      }),
+      { status: 200 }
+    );
   } catch (error) {
     console.error("Error in GET /api/subscribe:", error);
     throw error;
