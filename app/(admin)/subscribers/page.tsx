@@ -33,11 +33,12 @@ export default function Subscribers() {
       setCurrentPageUsers(users.slice(0, 10));
       setTotalPages(totalPages);
       setTotalEmails(totalUsers);
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error("Error fetching users:", error);
       const errorMessage =
-        error.response?.data?.message ||
-        "Unable to connect to the database. Please check your database connection and try again.";
+        error instanceof Error && "response" in error
+          ? (error as any).response?.data?.message
+          : "Unable to connect to the database. Please check your database connection and try again.";
       toast.error(errorMessage);
       setUsers([]);
       setCurrentPageUsers([]);

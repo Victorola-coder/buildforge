@@ -42,7 +42,7 @@ export default async function sendMail(
       html: template as string | Buffer | Readable | AttachmentLike | undefined,
     };
 
-    transporter.sendMail(mailOptions, function (error, info) {
+    transporter.sendMail(mailOptions, function (error) {
       if (error) {
         console.log("ERROR SENDING", error);
       } else {
