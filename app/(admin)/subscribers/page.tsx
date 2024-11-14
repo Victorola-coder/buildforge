@@ -37,7 +37,8 @@ export default function Subscribers() {
       console.error("Error fetching users:", error);
       const errorMessage =
         error instanceof Error && "response" in error
-          ? (error as any).response?.data?.message
+          ? (error as unknown as { response: { data: { message: string } } })
+              .response?.data?.message
           : "Unable to connect to the database. Please check your database connection and try again.";
       toast.error(errorMessage);
       setUsers([]);

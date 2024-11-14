@@ -1,10 +1,10 @@
 declare module "aos";
 
-declare module "ejs";
+// declare module "ejs";
 
-declare module "nodemailer";
+// declare module "nodemailer";
 
-declare module "nodemailer/lib/mailer";
+// declare module "nodemailer/lib/mailer";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   disabled?: boolean;
