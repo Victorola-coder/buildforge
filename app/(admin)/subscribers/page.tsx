@@ -4,18 +4,6 @@ import axios from "axios";
 import { toast } from "sonner";
 import { useState, useEffect, useCallback } from "react";
 
-interface User {
-  _id: string;
-  email: string;
-}
-
-interface ApiResponse {
-  subscribers: User[];
-  totalPages: number;
-  totalSubscribers: number;
-  currentPage: number;
-}
-
 export default function Subscribers() {
   const [users, setUsers] = useState<User[]>([]);
   const [totalPages, setTotalPages] = useState<number>(1);

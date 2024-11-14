@@ -31,3 +31,22 @@ type UsePrevNextButtonsType = {
 interface SvgProps extends React.SVGProps<SVGSVGElement> {
   className?: string;
 }
+
+interface User {
+  _id: string;
+  email: string;
+}
+
+interface ApiResponse {
+  subscribers: User[];
+  totalPages: number;
+  currentPage: number;
+  totalSubscribers: number;
+}
+
+interface DataInterface {
+  LOGO?: string;
+  link?: string;
+  content?: string;
+  otp?: string; // Add OTP to the interface
+}

@@ -4,13 +4,6 @@ import { Readable } from "stream";
 import nodemailer from "nodemailer";
 import { AttachmentLike } from "nodemailer/lib/mailer";
 
-interface DataInterface {
-  LOGO?: string;
-  link?: string;
-  content?: string;
-  otp?: string; // Add OTP to the interface
-}
-
 export default async function sendMail(
   recipient: string,
   subject: string,
