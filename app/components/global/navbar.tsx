@@ -34,7 +34,7 @@ export default function Navbar() {
   return (
     <header
       className={clsx(
-        "sticky z-[1000] top-0 mx-[22px] py-[37px] md:py-[44px] md:mx-[222px]",
+        "sticky z-[1000] top-0 mx-[22px] py-[37px] lg:py-[44px] lg:mx-[222px]",
         isScrolled ? "bg-opacity-50" : "bg-opacity-100"
       )}
     >
@@ -76,7 +76,7 @@ export default function Navbar() {
             href="https://chat.whatsapp.com/LrGkqCkEUkoDFg8UVKuZD4"
             target="_blank"
           >
-            <button className="bg-primary hover:bg-primary-100 active:bg-primary-200 active:shadow-primary transition-all duration-300 active:bg-primary/80 active:scale-95 rounded-[30px] px-[20px] py-[12.5px] text-white font-medium text-[18px] leading-normal font-clashMed">
+            <button className="bg-primary whitespace-nowrap hover:bg-primary-100 active:bg-primary-200 active:shadow-primary transition-all duration-300 active:bg-primary/80 active:scale-95 rounded-[30px] px-[20px] py-[12.5px] text-white font-medium text-[18px] leading-normal font-clashMed">
               join the buildforge
             </button>
           </Link>
