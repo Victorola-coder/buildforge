@@ -6,7 +6,15 @@ const prisma = new PrismaClient();
 
 export async function POST(req: NextRequest) {
   try {
-    const { email } = await req.json();
+    const body = await req.json().catch(() => null);
+
+    if (!body || !body.email) {
+      return NextResponse.json(
+        { error: "Invalid request. Email is required" },
+        { status: 400 }
+      );
+    }
+    const { email } = body;
 
     console.log("Environment:", process.env.NODE_ENV);
     console.log("Database URL:", process.env.POSTGRES_URL);
@@ -30,10 +38,19 @@ export async function POST(req: NextRequest) {
       },
     });
 
-    return NextResponse.json(newSubscriber, { status: 201 });
+    return NextResponse.json(
+      {
+        message: "Successfully subscribed!",
+        ...newSubscriber,
+      },
+      { status: 201 }
+    );
   } catch (error) {
     console.error("Error in POST /api/subscribe:", error);
-    throw error;
+    return NextResponse.json(
+      { error: "Internal server error" },
+      { status: 500 }
+    );
   } finally {
     await prisma.$disconnect();
   }
@@ -58,7 +75,6 @@ export async function GET(request: Request) {
 
     const skip = (page - 1) * limit;
 
-    // Add your prisma query here
     const subscribers = await prisma.subscriber.findMany({
       where: {
         email: {

@@ -24,7 +24,7 @@ export default function Main() {
         body: JSON.stringify({ email }),
       });
 
-      const data = await res.json(); // Parse JSON response
+      const data = await res.json();
 
       if (!res.ok) {
         throw new Error(data.error || "Failed to subscribe");
@@ -36,7 +36,7 @@ export default function Main() {
       toast.error((error as Error).message);
     } finally {
       setLoading(false);
-      setEmail(""); // Reset email after the operation
+      setEmail("");
     }
   };
 
