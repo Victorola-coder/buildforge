@@ -21,6 +21,7 @@ const nextConfig = {
   env: {
     EMAIL_PASSWORD: process.env.EMAIL_PASSWORD || "fuckoff",
   },
+  output: 'standalone'
 };
 
 export default nextConfig;

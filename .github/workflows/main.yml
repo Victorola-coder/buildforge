@@ -33,6 +33,7 @@ jobs:
           password: buildforge2024.
           local-dir: ./
           server-dir: /
+          protocol: ftp
           exclude: |
             **/.git*
             **/.git*/**
