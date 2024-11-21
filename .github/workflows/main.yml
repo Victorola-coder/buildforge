@@ -12,10 +12,10 @@ jobs:
 
     steps:
       - name: Get latest code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: "18"
 
@@ -31,5 +31,10 @@ jobs:
           server: ftp.showmeelove.com
           username: buildforge@buildforge.xyz
           password: buildforge2024.
-          local-dir: dist/
+          local-dir: ./
           server-dir: /
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            README.md
