@@ -4,8 +4,8 @@ import hero from "@/public/images/hero.png";
 
 export default function Months() {
   return (
-    <section className="flex flex-col items-center gap-[50px]">
-      <div className="mx-[222px] flex flex-col items-center gap-[44px] justify-center bg-[#0D0D11] border-[1.5px] border-[#312E4999] rounded-[26px] p-[32px]">
+    <section>
+      <div className="flex flex-col items-center gap-[44px] justify-center bg-[#0D0D11] border-[1.5px] border-[#312E4999] rounded-[26px] p-[32px]">
         <Image src={hero} alt="image" draggable={false} loading="lazy" />
         <p className="text-[#E1DEF0] font-bold font-satBold text-[48px] text-center max-w-[769px] leading-[54px] tracking-[-0.04em]">
           two months to work on ideas that take sleep of your eyes. wdyt?
@@ -13,7 +13,7 @@ export default function Months() {
       </div>
 
       {/*  */}
-      <div className="mx-[222px] flex flex-col gap-[50px] justify-center bg-[#0D0D11] border-[1.5px] border-[#312E4999] rounded-[26px] py-[74px] px-[80px]">
+      <div className="mt-[50px] flex flex-col gap-[50px] justify-center bg-[#0D0D11] border-[1.5px] border-[#312E4999] rounded-[26px] py-[74px] px-[80px]">
         <h4 className="text-[#E1DEF0] font-bold font-satBold text-[57px] text-start max-w-[815px] leading-[69px] tracking-[-0.04em]">
           it begins with forghaus. completely free. for first-time builders. all
           irl for 2 months.
@@ -46,7 +46,7 @@ export default function Months() {
       </div>
 
       {/*  */}
-      <div className="flex flex-col items-center gap-[50px]">
+      <div className="my-[70px] flex flex-col items-center gap-[50px]">
         <h3 className="text-[57px] font-bold font-satBold leading-[54px] tracking-[-0.04px] max-w-[554px] text-center ">
           we don’t give af about your ideas fr
         </h3>

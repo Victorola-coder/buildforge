@@ -24,7 +24,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
 
   return (
     <>
-      <section className="relative embla my-[77px] mx-[222px]">
+      <section className="relative embla my-[77px]">
         <div className="absolute top-0 left-0  w-[316px] h-[318px] rounded-[370px] md:rounded-[794px] rotate-90 md:rotate-0 blur-[154px] bg-[#8066FF3D]"></div>
         <div className="embla__viewport" ref={emblaRef}>
           <div className="embla__container">
