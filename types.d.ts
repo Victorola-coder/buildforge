@@ -33,8 +33,11 @@ interface SvgProps extends React.SVGProps<SVGSVGElement> {
 }
 
 interface User {
-  _id: string;
+  id: number;
   email: string;
+  status?: string;
+  createdAt?: Date;
+  updatedAt?: Date;
 }
 
 interface ApiResponse {

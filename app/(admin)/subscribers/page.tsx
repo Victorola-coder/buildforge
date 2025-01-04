@@ -205,18 +205,19 @@ export default function Subscribers() {
                     <td colSpan={3} className="py-4 text-center">
                       <div className="flex justify-center items-center">
                         <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#3C096C]"></div>
-                        <span className="ml-2">Loading...</span>
                       </div>
                     </td>
                   </tr>
                 ) : (
-                  filteredUsers.map((user, index) => (
+                  filteredUsers.map((user) => (
                     <tr
-                      key={user._id}
+                      key={user.id}
                       className="border-b border-gray-200 hover:bg-gray-100"
                     >
                       <td className="py-3 px-6 text-left whitespace-nowrap">
-                        {(currentPage - 1) * 10 + index + 1}
+                        {(currentPage - 1) * 10 +
+                          filteredUsers.indexOf(user) +
+                          1}
                       </td>
                       <td className="py-3 px-6 text-left">{user.email}</td>
                       <td className="py-3 px-6 text-center">
