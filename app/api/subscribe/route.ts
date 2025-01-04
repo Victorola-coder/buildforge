@@ -26,7 +26,12 @@ export async function POST(req: NextRequest) {
 
     if (existingSubscriber) {
       return NextResponse.json(
-        { error: "Email already subscribed" },
+        {
+          error: "Email already exists",
+          message: "This email address is already subscribed to our newsletter",
+          status: "ALREADY_EXISTS",
+          email: email,
+        },
         { status: 409 }
       );
     }
@@ -47,8 +52,38 @@ export async function POST(req: NextRequest) {
     );
   } catch (error) {
     console.error("Error in POST /api/subscribe:", error);
+
+    // More detailed error handling
+    if (error instanceof Error) {
+      if (error.message.includes("Unique constraint")) {
+        return NextResponse.json(
+          {
+            error: "Duplicate email",
+            message: "This email is already registered",
+            status: "DUPLICATE_ERROR",
+          },
+          { status: 409 }
+        );
+      }
+
+      if (error.message.includes("prisma")) {
+        return NextResponse.json(
+          {
+            error: "Database error",
+            message: "Failed to connect to database. Please try again later.",
+            status: "DB_ERROR",
+          },
+          { status: 503 }
+        );
+      }
+    }
+
     return NextResponse.json(
-      { error: "Internal server error" },
+      {
+        error: "Internal server error",
+        message: "An unexpected error occurred. Please try again later.",
+        status: "INTERNAL_ERROR",
+      },
       { status: 500 }
     );
   } finally {
