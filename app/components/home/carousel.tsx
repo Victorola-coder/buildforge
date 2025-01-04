@@ -33,10 +33,10 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                 <div className="embla__slide__number bg-recent flex flex-col md:flex md:flex-row md:gap-[19px]">
                   <figure>
                     <Image
-                      src="https://cdn.dropp.cloud/86sgtk.svg"
-                      alt="recent"
                       width={183}
                       height={200}
+                      alt="recent"
+                      src="/images/unknown.svg"
                     />
                   </figure>
 

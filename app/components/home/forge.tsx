@@ -115,10 +115,10 @@ export default function Main() {
             height={300}
             width={500}
             alt="welcome!"
-            layout="responsive"
-            className="animate-spin-slow transition-all duration-300"
             draggable={false}
-            src="https://cdn.dropp.cloud/uedqjh.svg"
+            layout="responsive"
+            src="/images/welcome.svg"
+            className="animate-spin-slow transition-all duration-300"
           />
         </figure>
 

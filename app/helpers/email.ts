@@ -5,10 +5,10 @@ import nodemailer from "nodemailer";
 import { AttachmentLike } from "nodemailer/lib/mailer";
 
 export default async function sendMail(
-  recipient: string,
-  subject: string,
   otp: string,
   file: string,
+  subject: string,
+  recipient: string,
   data: DataInterface
 ) {
   const transporter = nodemailer.createTransport({
