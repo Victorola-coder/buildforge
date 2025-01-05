@@ -27,10 +27,9 @@ export async function POST(req: NextRequest) {
     if (existingSubscriber) {
       return NextResponse.json(
         {
-          error: "Email already exists",
-          message: "This email address is already subscribed to our newsletter",
-          status: "ALREADY_EXISTS",
-          email: email,
+          error: "Duplicate email",
+          message: "This email is already registered",
+          status: "DUPLICATE_ERROR",
         },
         { status: 409 }
       );
@@ -53,20 +52,10 @@ export async function POST(req: NextRequest) {
   } catch (error) {
     console.error("Error in POST /api/subscribe:", error);
 
-    // detailed error handling?
-    if (error instanceof Error) {
-      if (error.message.includes("Unique constraint")) {
-        return NextResponse.json(
-          {
-            error: "Duplicate email",
-            message: "This email is already registered",
-            status: "DUPLICATE_ERROR",
-          },
-          { status: 409 }
-        );
-      }
-
-      if (error.message.includes("prisma")) {
+    // Safer error handling
+    if (error && typeof error === "object") {
+      // Handle database connection errors
+      if ("code" in error && error.code === "P2021") {
         return NextResponse.json(
           {
             error: "Database error",
@@ -78,6 +67,7 @@ export async function POST(req: NextRequest) {
       }
     }
 
+    // Generic error response
     return NextResponse.json(
       {
         error: "Internal server error",
