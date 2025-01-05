@@ -27,7 +27,7 @@ export default function Main() {
       const data = await res.json();
 
       if (!res.ok) {
-        throw new Error(data.error || "Failed to subscribe");
+        throw new Error(data.message || "Failed to subscribe");
       }
 
       toast.success(data.message || "Successfully subscribed!");

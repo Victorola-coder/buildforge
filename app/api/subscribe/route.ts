@@ -53,7 +53,7 @@ export async function POST(req: NextRequest) {
   } catch (error) {
     console.error("Error in POST /api/subscribe:", error);
 
-    // More detailed error handling
+    // detailed error handling?
     if (error instanceof Error) {
       if (error.message.includes("Unique constraint")) {
         return NextResponse.json(
