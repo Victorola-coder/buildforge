@@ -5,6 +5,7 @@ import Image from "next/legacy/image";
 import { EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
 import { PrevButton, NextButton, usePrevNextButtons } from "./arrows";
+import unknown from "@/public/images/unknown.svg";
 
 type PropType = {
   slides: number[];
@@ -24,7 +25,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
 
   return (
     <>
-      <section className="relative embla my-[77px] mx-[222px]">
+      <section className="relative embla md:my-[77px] md:mx-[222px]">
         <div className="absolute top-0 left-0 md:w-[691.902px] md:h-[351px] w-[430px] h-[318px] rounded-[430px] md:rounded-[794px] rotate-90 md:rotate-0 blur-[154px] bg-[#8066FF3D]"></div>
         <div className="embla__viewport" ref={emblaRef}>
           <div className="embla__container">
@@ -32,12 +33,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
               <div className="embla__slide" key={index}>
                 <div className="embla__slide__number bg-recent flex flex-col md:flex md:flex-row md:gap-[19px]">
                   <figure>
-                    <Image
-                      width={183}
-                      height={200}
-                      alt="recent"
-                      src="/images/unknown.svg"
-                    />
+                    <Image alt="recent" src={unknown} />
                   </figure>
 
                   <div className=" flex flex-col gap-[27px] text-[#E1DEF0]">

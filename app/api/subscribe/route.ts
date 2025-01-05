@@ -52,9 +52,7 @@ export async function POST(req: NextRequest) {
   } catch (error) {
     console.error("Error in POST /api/subscribe:", error);
 
-    // Safer error handling
     if (error && typeof error === "object") {
-      // Handle database connection errors
       if ("code" in error && error.code === "P2021") {
         return NextResponse.json(
           {
